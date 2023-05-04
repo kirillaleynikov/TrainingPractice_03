@@ -89,32 +89,6 @@ namespace TrainingPractice_03
             exApp.Cells[1, 7] = "Объём на начало дня (л)";
             exApp.Cells[1, 8] = "Объём продажи (л)";
             exApp.Visible = true;
-            //Excel.Application xlApp = new Excel.Application();
-            //Excel.Workbook wBook;
-            //Excel.Worksheet xlSheet;
-            //wBook = xlApp.Workbooks.Add();
-            //xlApp.Columns.ColumnWidth = 30;
-            //xlSheet = (Excel.Worksheet)wBook.Sheets[1];
-            //xlSheet.Name = "Остатки";
-            //for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
-            //{
-            //    for (int j = 0; j <= dataGridView1.Columns.Count - 1; j++)
-            //    {
-            //        xlApp.Cells[i+1, j + 1] = dataGridView1[j,i].Value.ToString();
-            //    }
-            //}
-            //xlSheet.Cells.HorizontalAlignment = 3;
-            //xlApp.Cells[1, 1] = "Код вида топлива";
-            //xlApp.Cells[1, 2] = "Название топлива";
-            //xlApp.Cells[1, 3] = "Цена топлива";
-            //xlApp.Cells[1, 4] = "Код учёта";
-            //xlApp.Cells[1, 5] = "Код вида топлива (проверка)";
-            //xlApp.Cells[1, 6] = "Дата";
-            //xlApp.Cells[1, 7] = "Объём на начало дня (л)";
-            //xlApp.Cells[1, 8] = "Объём продажи (л)";
-
-            //xlApp.Visible = true;
-
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -67,17 +68,53 @@ namespace TrainingPractice_03
 
         private void button1_Click(object sender, EventArgs e)
         {
-           Excel.Application exApp = new Excel.Application();
-           exApp.Workbooks.Add();
+            Excel.Application exApp = new Excel.Application();
+            exApp.Workbooks.Add();
             Excel.Worksheet wsh = (Excel.Worksheet)exApp.ActiveSheet;
-            for (int i=0; i <= dataGridView1.RowCount - 1; i++)
+            exApp.Columns.ColumnWidth = 30;
+            for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
             {
                 for (int j = 0; j <= dataGridView1.ColumnCount - 1; j++)
                 {
-                    wsh.Cells[i+1,j+1] = dataGridView1[j,i].Value.ToString();
+                    wsh.Cells[i + 2, j + 1] = dataGridView1[j, i].Value.ToString();
                 }
             }
+            exApp.Cells.HorizontalAlignment = 3;
+            exApp.Cells[1, 1] = "Код вида топлива";
+            exApp.Cells[1, 2] = "Название топлива";
+            exApp.Cells[1, 3] = "Цена топлива";
+            exApp.Cells[1, 4] = "Код учёта";
+            exApp.Cells[1, 5] = "Код вида топлива (проверка)";
+            exApp.Cells[1, 6] = "Дата";
+            exApp.Cells[1, 7] = "Объём на начало дня (л)";
+            exApp.Cells[1, 8] = "Объём продажи (л)";
             exApp.Visible = true;
+            //Excel.Application xlApp = new Excel.Application();
+            //Excel.Workbook wBook;
+            //Excel.Worksheet xlSheet;
+            //wBook = xlApp.Workbooks.Add();
+            //xlApp.Columns.ColumnWidth = 30;
+            //xlSheet = (Excel.Worksheet)wBook.Sheets[1];
+            //xlSheet.Name = "Остатки";
+            //for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
+            //{
+            //    for (int j = 0; j <= dataGridView1.Columns.Count - 1; j++)
+            //    {
+            //        xlApp.Cells[i+1, j + 1] = dataGridView1[j,i].Value.ToString();
+            //    }
+            //}
+            //xlSheet.Cells.HorizontalAlignment = 3;
+            //xlApp.Cells[1, 1] = "Код вида топлива";
+            //xlApp.Cells[1, 2] = "Название топлива";
+            //xlApp.Cells[1, 3] = "Цена топлива";
+            //xlApp.Cells[1, 4] = "Код учёта";
+            //xlApp.Cells[1, 5] = "Код вида топлива (проверка)";
+            //xlApp.Cells[1, 6] = "Дата";
+            //xlApp.Cells[1, 7] = "Объём на начало дня (л)";
+            //xlApp.Cells[1, 8] = "Объём продажи (л)";
+
+            //xlApp.Visible = true;
+
         }
     }
 }
